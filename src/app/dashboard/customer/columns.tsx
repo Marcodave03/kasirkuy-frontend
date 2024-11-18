@@ -129,7 +129,7 @@ export const columns: ColumnDef<Customer>[] = [
             <DropdownMenuSeparator />
             <DropdownMenuItem>Edit Product</DropdownMenuItem>
             <DropdownMenuItem>
-              <DeleteAlert triggerText="Delete Product" />
+              <DeleteAlert productId={product.id} triggerText="Delete Product" />
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

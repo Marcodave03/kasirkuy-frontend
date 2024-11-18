@@ -13,15 +13,17 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useRouter } from 'next/navigation';
 import { AlertDialogAction } from '@radix-ui/react-alert-dialog';
+import { BASE_URL } from '@/app/config';
 
 interface DeleteAlertProps {
   icon?: React.ReactNode;
   productId: string | number;
+  triggerText?: string;
 }
 
 
 
-const DeleteProduct: React.FC<DeleteAlertProps> = ({ icon, productId }) => {
+const DeleteProduct: React.FC<DeleteAlertProps> = ({ icon, productId, triggerText }) => {
   const router = useRouter()
   const handleDelete = async () => {
     try {
@@ -42,7 +44,10 @@ const DeleteProduct: React.FC<DeleteAlertProps> = ({ icon, productId }) => {
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger>{icon && <span className="icon">{icon}</span>}</AlertDialogTrigger>
+      <AlertDialogTrigger>
+        {icon && <span className="icon">{icon}</span>}
+        {triggerText && <span>{triggerText}</span>}
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
