@@ -2,8 +2,6 @@
 
 import {
   Calendar,
-  ChevronDown,
-  ChevronRight,
   ChevronUp,
   Home,
   Inbox,
@@ -20,7 +18,6 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -87,7 +84,7 @@ const founder = [
 ];
 
 export function AppSidebar() {
-  const { state } = useSidebar();
+  const {  } = useSidebar();
   return (
     <Sidebar variant="inset" collapsible="icon" className="border-gray-200 dark:border-gray-900  border-r-2">
       <SidebarContent>

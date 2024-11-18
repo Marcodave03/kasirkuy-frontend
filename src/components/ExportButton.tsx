@@ -2,7 +2,7 @@
 
 import { BASE_URL } from "@/app/config"
 import { Button } from "@/components/ui/button"
-import { FileIcon, FileSpreadsheet, FileText } from "lucide-react"
+import { FileIcon,FileText } from "lucide-react"
 import { useState } from "react"
 export function ExportButtonExcel(props:{companyId : string | number}) {
   const [isExporting, setIsExporting] = useState(false)

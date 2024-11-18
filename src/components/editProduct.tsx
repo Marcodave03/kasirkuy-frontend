@@ -45,7 +45,7 @@ interface EditProductProps {
 }
 
 const EditProduct: React.FC<EditProductProps> = ({
-    productId,
+    //productId,
     productName,
     categoryName,
     categoryId,
@@ -65,18 +65,18 @@ const EditProduct: React.FC<EditProductProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const productData = {
-      id: productId,
-      name,
-      categoryId : category?.id,
-      categoryName : category?.name,
-      price,
-      stock,
-    };
+    // const productData = {
+    //   id: productId,
+    //   name,
+    //   categoryId : category?.id,
+    //   categoryName : category?.name,
+    //   price,
+    //   stock,
+    // };
     if (!category?.name || !name || !price || !stock) {
     } else {
       try {
-        let newCategory = { id: category.id, name: category.name };
+       // let newCategory = { id: category.id, name: category.name };
         if (category && !items.find((item) => item === category)) {
           const categoryResponse = await fetch(
             `${BASE_URL}/api/categories/new_category`,
@@ -95,28 +95,28 @@ const EditProduct: React.FC<EditProductProps> = ({
               result
             ]);
             setCategory(null);
-            newCategory = { id: result.id, name: result.name };
+            //newCategory = { id: result.id, name: result.name };
           } else {
             throw new Error("Failed to add Category");
           }
         }
-        const productResponse = await fetch(
-          `${BASE_URL}/api/items/edit_product`,
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              id : productId,
-              name,
-              price,
-              stock,
-              categoryId : newCategory?.id,
-              categoryName : newCategory?.name,
-            })
-          }
-        );
+        // const productResponse = await fetch(
+        //   `${BASE_URL}/api/items/edit_product`,
+        //   {
+        //     method: "PATCH",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //       id : productId,
+        //       name,
+        //       price,
+        //       stock,
+        //       categoryId : newCategory?.id,
+        //       categoryName : newCategory?.name,
+        //     })
+        //   }
+        // );
         setIsDialogOpen(false);
       } catch (error) {
         console.error("Error adding product or category:", error);
@@ -292,7 +292,7 @@ const EditProduct: React.FC<EditProductProps> = ({
                                 <DialogHeader>
                                   <DialogTitle>Confirm Deletion</DialogTitle>
                                   <DialogDescription>
-                                    Are you sure you want to delete the category "{item.name}"? This action cannot be undone.
+                                    Are you sure you want to delete the category {item.name}? This action cannot be undone.
                                   </DialogDescription>
                                 </DialogHeader>
                                 <DialogFooter>

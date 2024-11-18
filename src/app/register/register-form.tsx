@@ -50,7 +50,7 @@ export default function RegisterForm() {
       }else{
         setError("Email is already Used");
       }
-    } catch (err) {
+    } catch{
       setError('An error occurred. Please try again.')
     }
   }

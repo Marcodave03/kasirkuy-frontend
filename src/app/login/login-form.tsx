@@ -46,7 +46,7 @@ export default function LoginForm() {
         const data = await response.json();
         setError(data.message || 'Login failed. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred. Please try again.');
     }
   };
@@ -94,7 +94,7 @@ export default function LoginForm() {
       </CardContent>
       <CardFooter className="flex justify-center">
         <p className="text-sm text-gray-600">
-          Don't have an account? <Link href="/register" className="text-blue-600 hover:underline">Sign up</Link>
+          Dont have an account? <Link href="/register" className="text-blue-600 hover:underline">Sign up</Link>
         </p>
       </CardFooter>
     </Card>
