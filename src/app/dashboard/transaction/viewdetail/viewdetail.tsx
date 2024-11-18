@@ -10,9 +10,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-// import { DataTable } from "./data-table-detail";
+import { DataTable } from "./data-table-detail";
 import { BASE_URL } from "@/app/config";
-// import { columns } from "./columns-detail";
+import { columns, ProductTransaction } from "./columns-detail";
 
 interface ViewDetailProps {
   transaction: string | number;
@@ -20,7 +20,7 @@ interface ViewDetailProps {
 }
 
 const ViewDetail: React.FC<ViewDetailProps> = ({ transaction, invoice }) => {
-  const [, setDetails] = React.useState<unknown>(null);
+  const [details, setDetails] = React.useState<ProductTransaction[]>([]);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   const fetchDetails = async () => {
@@ -66,7 +66,7 @@ const ViewDetail: React.FC<ViewDetailProps> = ({ transaction, invoice }) => {
           <DialogTitle>Transaction Detail</DialogTitle>
           <DialogDescription>{invoice}</DialogDescription>
         </DialogHeader>
-        {/* <DataTable columns={columns} data={details}/> */}
+        <DataTable columns={columns} data={details}/>
       </DialogContent>
     </Dialog>
   );
