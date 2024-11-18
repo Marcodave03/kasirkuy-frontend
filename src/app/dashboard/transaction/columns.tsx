@@ -56,7 +56,7 @@ export const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "invoice",
-    header: ({ column }) => {
+    header: ({ }) => {
       return (
         <>
           Invoice
@@ -67,7 +67,7 @@ export const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "custName",
-    header: ({ column }) => {
+    header: ({ }) => {
       return (
         <>Customer Name</>
       );
@@ -75,7 +75,7 @@ export const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "custPhone",
-    header: ({ column }) => {
+    header: ({ }) => {
       return (
         <>
         Customer Phone
@@ -85,7 +85,7 @@ export const columns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "totalPrice",
-    header: ({ column }) => {
+    header: ({ }) => {
       return (
         <>
           Total Price

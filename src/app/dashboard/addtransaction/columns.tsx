@@ -1,24 +1,6 @@
 "use client";
 
-import React from "react";
 import { ColumnDef } from "@tanstack/react-table";
-// import { MoreHorizontal } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   // DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu";
-import { Trash2 } from "lucide-react";
-
-import { ArrowUpDown } from "lucide-react";
-
-import DeleteAlert from "@/components/deleteProduct";
-import EditProduct from "@/components/editProduct";
 
 export type ProductTransaction = {
   name: string;

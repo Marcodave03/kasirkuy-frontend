@@ -8,7 +8,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { ArrowUpDown } from "lucide-react";
 import { ProductTransaction } from "./columns";
 import { X } from "lucide-react"; // Import X icon
 

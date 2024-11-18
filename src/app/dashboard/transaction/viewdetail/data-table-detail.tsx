@@ -18,7 +18,7 @@ type ProductTransaction = {
 };
 
 type DataTableProps<TData extends ProductTransaction> = {
-  columns: ColumnDef<TData, any>[];
+  columns: ColumnDef<TData>[];
   data: TData[];
 };
 
@@ -33,10 +33,9 @@ export function DataTable<TData extends ProductTransaction>({
         {columns.map((column, index) => (
           <TableHead key={index} className="text-center">
             {column.header
-              ? typeof column.header === "function"
-                ? column.header({ column }) // Adjust props based on expected input
-                : column.header
-              : "N/A"} {/* Fallback if header is undefined */}
+              ? typeof column.header === "function" 
+              : column.header
+              } 
           </TableHead>
         ))}
         </TableRow>

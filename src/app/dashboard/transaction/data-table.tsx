@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from 'next/navigation';
 import * as React from "react";
 
 import {
@@ -23,10 +22,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { DateRanges } from "@/components/DateRange";
 import { PaginationButton } from "@/components/pagination";
 
 interface DataTableProps<TData, TValue> {
