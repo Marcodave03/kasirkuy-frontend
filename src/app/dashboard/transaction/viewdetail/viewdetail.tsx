@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 // import { DataTable } from "./data-table-detail";
 import { BASE_URL } from "@/app/config";
-// import { columns } from "../columns";
+// import { columns } from "./columns-detail";
 
 interface ViewDetailProps {
   transaction: string | number;
@@ -20,7 +20,7 @@ interface ViewDetailProps {
 }
 
 const ViewDetail: React.FC<ViewDetailProps> = ({ transaction, invoice }) => {
-  const [details, setDetails] = React.useState<unknown>(null);
+  const [, setDetails] = React.useState<unknown>(null);
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   const fetchDetails = async () => {
